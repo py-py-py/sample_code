@@ -9,7 +9,12 @@ phantomjs
 ```
 
 - seleniumのインストール
+
 pip でお願い
 ```pip
 pip install selenium
 ```
+
+このコードの目的
+
+Python公式の標準ライブラリ一覧から、それぞれのリンクを取得するためのものである。
