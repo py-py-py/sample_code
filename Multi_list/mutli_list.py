@@ -1,7 +1,7 @@
 def create_num_list(target_list):
     tmp_num_list = []
     for num in target_list:
-        tmp_num_list.append(int(num.split("-")[0]))
+        tmp_num_list.append(num.split("-")[0])
     num_list = list(set(tmp_num_list))
     return num_list
 
