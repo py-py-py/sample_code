@@ -1,7 +1,7 @@
 def create_num_list(target_list):
     tmp_num_list = []
     for num in target_list:
-        tmp_num_list.append(num.split("-")[0])
+        tmp_num_list.append(int(num.split("-")[0]))
     num_list = list(set(tmp_num_list))
     return num_list
 
@@ -11,7 +11,7 @@ def create_multi_list(target_list, num_list):
     tmp_result = []
     for num in num_list:
         for content in target_list:
-            if content.split("-")[0] == num:
+            if content.split("-")[0] == str(num):
                 tmp_result.append(content)
         results.append(tmp_result)
         tmp_result = []
