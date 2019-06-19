@@ -1,4 +1,4 @@
-from qiita import Crawler
+from Crawler import Crawler
 from OutPutCsv import OutPutCsv
 
 def main():
