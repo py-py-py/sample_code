@@ -8,40 +8,7 @@ class ParserHtml(object):
         self.files = files
         self.out_put = {}
 
-    def insert_tag(self):
-        pass
-
-    def insert_tag_check(self) -> dict:
-        """
-        headタグ内にタグがあるかを確認する
-        :return: list
-        """
-
-        html = ""
-        for file in self.files:
-            with open(file, "r", encoding="utf-8") as f:
-                html = f.read()
-            html: BeautifulSoup = BeautifulSoup(html, "html.parser")
-            heads = html.find_all("head")
-            result: dict = {}
-            result[file] = {
-                "file_name": file,
-                "head_tag_content": "",
-                "check": ""
-            }
-            for head in heads:
-                result[file]["head_tag_content"] = head
-                """headタグ内に挿入したタグがあるかを文字列の一致で確認する"""
-                if "<meta charset" in str(head):
-                    result[file]["check"] = "○"
-                else:
-                    result[file]["check"] = "×"
-
-            self.out_put.update(result)
-
-        return self.out_put
-
-    def insert_tag_check2(self):
+    def insert_tag_check(self):
         html = ""
         with open("result2.csv", "a", encoding="utf-8_sig", newline="") as f:
             csv_header = [
@@ -65,6 +32,7 @@ class ParserHtml(object):
 
                 for head in heads:
                     result[file]["head_tag_content"] = head
+                    
                     """headタグ内に挿入したタグがあるかを文字列の一致で確認する"""
                     if ("Global site tag (gtag.js)" in str(head)) or ("googletagmanager" in str(head)):
                         result[file]["check"] = "○"
