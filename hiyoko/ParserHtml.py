@@ -13,7 +13,7 @@ class ParserHtml(object):
     def insert_tag_check(self) -> dict:
         """
         headタグ内にタグがあるかを確認する
-        :return: list
+        :return: 
         """
 
         html = ""
