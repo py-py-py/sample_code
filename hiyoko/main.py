@@ -11,7 +11,7 @@ def main():
         pass
     else:
         # results: dict = ph.insert_tag_check()
-        ph.insert_tag_check2()
+        ph.insert_tag_check()
         # fo.out_put_csv(results)
 
 if __name__ == '__main__':
