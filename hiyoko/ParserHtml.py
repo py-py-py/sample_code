@@ -66,7 +66,7 @@ class ParserHtml(object):
                 for head in heads:
                     result[file]["head_tag_content"] = head
                     """headタグ内に挿入したタグがあるかを文字列の一致で確認する"""
-                    if "<meta charset" in str(head):
+                    if ("Global site tag (gtag.js)" in str(head)) and ("googletagmanager" in str(head)):
                         result[file]["check"] = "○"
                     else:
                         result[file]["check"] = "×"
