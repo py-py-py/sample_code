@@ -10,9 +10,9 @@ def main():
     if work_pattern == 1:
         pass
     else:
-        results: dict = ph.insert_tag_check()
-        fo.out_put_csv(results)
-
+        # results: dict = ph.insert_tag_check()
+        ph.insert_tag_check2()
+        # fo.out_put_csv(results)
 
 if __name__ == '__main__':
     main()
