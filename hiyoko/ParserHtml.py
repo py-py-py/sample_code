@@ -66,7 +66,7 @@ class ParserHtml(object):
                 for head in heads:
                     result[file]["head_tag_content"] = head
                     """headタグ内に挿入したタグがあるかを文字列の一致で確認する"""
-                    if ("Global site tag (gtag.js)" in str(head)) and ("googletagmanager" in str(head)):
+                    if ("Global site tag (gtag.js)" in str(head)) or ("googletagmanager" in str(head)):
                         result[file]["check"] = "○"
                     else:
                         result[file]["check"] = "×"
@@ -76,5 +76,3 @@ class ParserHtml(object):
                     result[file]["check"]
                 ]
                 writer.writerow(csv_data)
-
-
