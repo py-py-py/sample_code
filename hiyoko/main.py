@@ -9,11 +9,9 @@ def main():
     ph = ParserHtml(files)
     if work_pattern == 1:
         pass
-    elif work_pattern == 2:
+    else:
         results: dict = ph.insert_tag_check()
         fo.out_put_csv(results)
-    else:
-        return "1 または 2以外の数字が押されました。どちらかを選んでください。"
 
 
 if __name__ == '__main__':
